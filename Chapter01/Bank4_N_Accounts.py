@@ -52,6 +52,6 @@ while True:
         userPassword = input('Please enter the password: ')
         theBalance = getBalance(userAccountNumber, userPassword)
         if theBalance is not None:
-            print('Your balance is:', theBalance)
+            print('Your balance is:', theBalance)   
     
     print('Done')            
