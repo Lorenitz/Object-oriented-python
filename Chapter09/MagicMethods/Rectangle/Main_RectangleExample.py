@@ -24,24 +24,24 @@ for i in range(0, N_RECTANGLES):
 
 whichRectangle = FIRST_RECTANGLE
 
-# Main Loop
-while True: 
+# Main loop
+while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
-            sys.exit()        
-        
+            sys.exit()
+
         if event.type == MOUSEBUTTONDOWN:
             for oRectangle in rectanglesList:
                 if oRectangle.clickedInside(event.pos):
                     print('Clicked on', whichRectangle, 'rectangle.')
-                   
+
                     if whichRectangle == FIRST_RECTANGLE:
                         oFirstRectangle = oRectangle
-                        whichRectangle == SECOND_RECTANGLE
-                                    
+                        whichRectangle = SECOND_RECTANGLE
+
                     elif whichRectangle == SECOND_RECTANGLE:
-                        oSecondRectangle = oRectangle      
+                        oSecondRectangle = oRectangle
                         # User has chosen 2 rectangles, let's compare
                         if oFirstRectangle == oSecondRectangle:
                             print('Rectangles are the same size.')
@@ -50,11 +50,11 @@ while True:
                         else: # must be larger
                             print('First rectangle is larger than second rectangle.')
                         whichRectangle = FIRST_RECTANGLE
-                                                                                
+
     # Clear the window and draw all rectangles
     window.fill(WHITE)
     for oRectangle in rectanglesList:
         oRectangle.draw()
 
     pygame.display.update()
-    clock.tick(FRAMES_PER_SECOND)                        
+    clock.tick(FRAMES_PER_SECOND)
